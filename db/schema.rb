@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106162621) do
+ActiveRecord::Schema.define(:version => 20131107155745) do
 
   create_table "rooms", :force => true do |t|
     t.string   "title"
@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(:version => 20131106162621) do
     t.string   "password_digest"
     t.string   "location"
     t.text     "bio"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.time     "confirmed_at"
+    t.string   "confirmation_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
