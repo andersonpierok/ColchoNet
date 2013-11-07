@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
 
   before_create :generate_token
 
+  scope :confirmed, where('confirmed_at IS NOT NULL')
+
+  def self.authenticate(email,password)
+    confirmed.
+      find_by_email(email).
+      try(:authenticate, password)
+  end
+
   def generate_token
   	self.confirmation_token = SecureRandom.urlsafe_base64
   end
