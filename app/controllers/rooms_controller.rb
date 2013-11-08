@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+
+  before_filter :require_authentication, :only => [:new, :edit, :create. :update, :destroy]
   
   def index
     @rooms = Room.all
@@ -19,7 +21,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(params[:room])
       if @room.save
-        redirect_to @room, notice: 'Room was successfully created.'
+        redirect_to @room, notice: t('flash.notice.room_created')
       else
         render action: "new"
       end
@@ -28,7 +30,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
       if @room.update_attributes(params[:room])
-        redirect_to @room, notice: 'Room was successfully updated.'
+        redirect_to @room, notice: t('flash.notice.room_update')
       else
         render action: "edit"
       end

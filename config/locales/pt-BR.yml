@@ -2,6 +2,9 @@ pt-BR:
    flash:
       notice:
          signed_in: Logado com sucesso
+         signed_out: Logout efetuado com sucesso. Até logo!
+      alert:
+         needs_login: 'Para continuar, você precisa estar logado'
    users:
       confirmations:
          success: Email confirmado com sucesso, obrigado!
