@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :rooms
+  
   attr_accessible :bio, :email, :full_name, :location, :password, :password_confirmation
 
 
