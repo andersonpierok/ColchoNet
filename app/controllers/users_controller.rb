@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
 	def show
 		busca_user
+		@rooms = @user.rooms
 	end
 
 	def edit
