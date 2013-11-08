@@ -20,6 +20,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+	gem 'minitest'
+	# Pretty printed test output
+	gem 'turn', :require => false
+	gem "mocha", :require => false
+	gem "factory_girl_rails", "~> 4.1.0"
+	gem 'simplecov'
+end
+
 gem 'bcrypt-ruby','~> 3.0.0'
 gem 'jquery-rails'
 

@@ -1,4 +1,7 @@
 pt-BR:
+   flash:
+      notice:
+         signed_in: Logado com sucesso
    users:
       confirmations:
          success: Email confirmado com sucesso, obrigado!
@@ -31,6 +34,10 @@ pt-BR:
    layout:
       rooms: Quartos
       signup: Cadastro
+      signin: Login
+      my_profile: Meu perfil
+      signout: Logout
+      new_room: Adicionar quartos
    general:
       form_error: Há erros no formulário, por favor verifique.
    activerecord:

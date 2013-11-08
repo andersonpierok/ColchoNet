@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   scope :confirmed, where('confirmed_at IS NOT NULL')
 
-  def self.authenticate(email,password)
+  def self.authenticate(email, password)
     confirmed.
       find_by_email(email).
       try(:authenticate, password)
